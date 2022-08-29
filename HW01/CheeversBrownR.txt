@@ -1,0 +1,226 @@
+# Ryan Cheevers-Brown
+# HW01 - ISTE230
+# 29Aug2022, 13:19 EST
+
+mysql> SHOW VARIABLES LIKE "%VERSION%";
+--------------
+SHOW VARIABLES LIKE "%VERSION%"
+--------------
+
++--------------------------+------------------------------+
+| Variable_name            | Value                        |
++--------------------------+------------------------------+
+| admin_tls_version        | TLSv1.2,TLSv1.3              |
+| immediate_server_version | 999999                       |
+| innodb_version           | 8.0.30                       |
+| original_server_version  | 999999                       |
+| protocol_version         | 10                           |
+| replica_type_conversions |                              |
+| slave_type_conversions   |                              |
+| tls_version              | TLSv1.2,TLSv1.3              |
+| version                  | 8.0.30                       |
+| version_comment          | MySQL Community Server - GPL |
+| version_compile_machine  | x86_64                       |
+| version_compile_os       | macos12                      |
+| version_compile_zlib     | 1.2.12                       |
++--------------------------+------------------------------+
+13 rows in set (0.01 sec)
+
+mysql> SHOW DATABASES;
+--------------
+SHOW DATABASES
+--------------
+
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.01 sec)
+
+mysql> SELECT current_date;
+--------------
+SELECT current_date
+--------------
+
++--------------+
+| current_date |
++--------------+
+| 2022-08-29   |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT current_time;
+--------------
+SELECT current_time
+--------------
+
++--------------+
+| current_time |
++--------------+
+| 13:13:53     |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT current_timestamp;
+--------------
+SELECT current_timestamp
+--------------
+
++---------------------+
+| current_timestamp   |
++---------------------+
+| 2022-08-29 13:14:00 |
++---------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT current_user;
+--------------
+SELECT current_user
+--------------
+
++----------------+
+| current_user   |
++----------------+
+| root@localhost |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT now();
+--------------
+SELECT now()
+--------------
+
++---------------------+
+| now()               |
++---------------------+
+| 2022-08-29 13:14:10 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT pi();
+--------------
+SELECT pi()
+--------------
+
++----------+
+| pi()     |
++----------+
+| 3.141593 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT user();
+--------------
+SELECT user()
+--------------
+
++----------------+
+| user()         |
++----------------+
+| root@localhost |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT version();
+--------------
+SELECT version()
+--------------
+
++-----------+
+| version() |
++-----------+
+| 8.0.30    |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT curdate();
+--------------
+SELECT curdate()
+--------------
+
++------------+
+| curdate()  |
++------------+
+| 2022-08-29 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> notee
+mysql> SELECT DATE_ADD(CURDATE(), INTERVAL 1 DAY);
+--------------
+SELECT DATE_ADD(CURDATE(), INTERVAL 1 DAY)
+--------------
+
++-------------------------------------+
+| DATE_ADD(CURDATE(), INTERVAL 1 DAY) |
++-------------------------------------+
+| 2022-08-30                          |
++-------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT DATE_ADD(CURDATE(), INTERVAL 1 MONTH);
+--------------
+SELECT DATE_ADD(CURDATE(), INTERVAL 1 MONTH)
+--------------
+
++---------------------------------------+
+| DATE_ADD(CURDATE(), INTERVAL 1 MONTH) |
++---------------------------------------+
+| 2022-09-29                            |
++---------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> notee
+mysql> SELECT DATE_SUB('2020-12-24', INTERVAL 1 MONTH);
+--------------
+SELECT DATE_SUB('2020-12-24', INTERVAL 1 MONTH)
+--------------
+
++------------------------------------------+
+| DATE_SUB('2020-12-24', INTERVAL 1 MONTH) |
++------------------------------------------+
+| 2020-11-24                               |
++------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT DATE_ADD('2020-12-24', INTERVAL 1 MONTH);
+--------------
+SELECT DATE_ADD('2020-12-24', INTERVAL 1 MONTH)
+--------------
+
++------------------------------------------+
+| DATE_ADD('2020-12-24', INTERVAL 1 MONTH) |
++------------------------------------------+
+| 2021-01-24                               |
++------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT DATE_ADD('2020-12-24', INTERVAL 30 DAY);
+--------------
+SELECT DATE_ADD('2020-12-24', INTERVAL 30 DAY)
+--------------
+
++-----------------------------------------+
+| DATE_ADD('2020-12-24', INTERVAL 30 DAY) |
++-----------------------------------------+
+| 2021-01-23                              |
++-----------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT DATE_ADD('2020-12-24', INTERVAL 31 DAY);
+--------------
+SELECT DATE_ADD('2020-12-24', INTERVAL 31 DAY)
+--------------
+
++-----------------------------------------+
+| DATE_ADD('2020-12-24', INTERVAL 31 DAY) |
++-----------------------------------------+
+| 2021-01-24                              |
++-----------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> notee
