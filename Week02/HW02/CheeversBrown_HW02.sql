@@ -1,6 +1,8 @@
 -- Ryan Cheevers-Brown
 -- HW 02 - ISTE230, Intro to DB
 
+tee /tmp/CheeversBrown_HW02.txt;
+
 -- Table: Item
 CREATE TABLE Item (
     itemID VARCHAR(25) UNIQUE,
@@ -18,6 +20,8 @@ CREATE TABLE Item (
     returnable CHAR(1),
     perishable CHAR(1),
     shelfQty INT UNSIGNED
-)
+);
 
 DESCRIBE Item;
+
+notee;
