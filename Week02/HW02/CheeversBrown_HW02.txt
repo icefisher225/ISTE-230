@@ -1,0 +1,76 @@
+Field	Type	Null	Key	Default	Extra
+itemID	varchar(25)	YES	UNI	NULL	
+itemName	varchar(25)	YES		NULL	
+iName	varchar(25)	YES		NULL	
+street	varchar(25)	YES		NULL	
+city	varchar(25)	YES		NULL	
+colors	varchar(25)	YES		NULL	
+usState	char(2)	YES		NULL	
+zipcode	char(5)	YES		NULL	
+cost	int	YES		NULL	
+retailPrice	int	YES		NULL	
+notes	varchar(255)	YES		NULL	
+descriptn	varchar(255)	YES		NULL	
+returnable	char(1)	YES		NULL	
+perishable	char(1)	YES		NULL	
+shelfQty	int unsigned	YES		NULL	
+--------------
+CREATE TABLE Item (
+    itemID VARCHAR(25) UNIQUE,
+    itemName VARCHAR(25),
+    iName VARCHAR(25),
+    street VARCHAR(25),
+    city VARCHAR(25), 
+    colors VARCHAR(25),
+    usState CHAR(2),
+    zipcode CHAR(5),
+    cost INT,
+    retailPrice INT,
+    notes VARCHAR(255),
+    descriptn VARCHAR(255), 
+    returnable CHAR(1),
+    perishable CHAR(1),
+    shelfQty INT UNSIGNED
+)
+--------------
+
+--------------
+CREATE TABLE Item (
+    itemID VARCHAR(25) UNIQUE,
+    itemName VARCHAR(25),
+    iName VARCHAR(25),
+    street VARCHAR(25),
+    city VARCHAR(25), 
+    colors VARCHAR(25),
+    usState CHAR(2),
+    zipcode CHAR(5),
+    cost INT,
+    retailPrice INT,
+    notes VARCHAR(255),
+    descriptn VARCHAR(255), 
+    returnable CHAR(1),
+    perishable CHAR(1),
+    shelfQty INT UNSIGNED
+)
+--------------
+
+--------------
+DESCRIBE Item
+--------------
+
+Field	Type	Null	Key	Default	Extra
+itemID	varchar(25)	YES	UNI	NULL	
+itemName	varchar(25)	YES		NULL	
+iName	varchar(25)	YES		NULL	
+street	varchar(25)	YES		NULL	
+city	varchar(25)	YES		NULL	
+colors	varchar(25)	YES		NULL	
+usState	char(2)	YES		NULL	
+zipcode	char(5)	YES		NULL	
+cost	int	YES		NULL	
+retailPrice	int	YES		NULL	
+notes	varchar(255)	YES		NULL	
+descriptn	varchar(255)	YES		NULL	
+returnable	char(1)	YES		NULL	
+perishable	char(1)	YES		NULL	
+shelfQty	int unsigned	YES		NULL	
