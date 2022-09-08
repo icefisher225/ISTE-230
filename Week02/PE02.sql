@@ -1,11 +1,11 @@
 -- tables
 -- Table: Books
 CREATE TABLE Books (
-    title           VARCHAR(50)     NULL,
+    title           VARCHAR(50),
     isbn13Number    VARCHAR(13)     UNIQUE,
-    author          VARCHAR(255)    NULL,
-    numberOfPages   SMALLINT        NULL,
-    releaseDate     DATE            NULL,
+    author          VARCHAR(255),
+    numberOfPages   SMALLINT,
+    releaseDate     DATE,
 );
 
-SHOW TABLE WHERE NAME=Books;
+DESCRIBE Books;

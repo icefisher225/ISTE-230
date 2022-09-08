@@ -1,0 +1,16 @@
+mysql> create table books ( title varchar(50) null, isbn13number char(13) unique, author varchar(255) null, numberOfPages int null, releasedate date);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> describe books;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| title         | varchar(50)  | YES  |     | NULL    |       |
+| isbn13number  | char(13)     | YES  | UNI | NULL    |       |
+| author        | varchar(255) | YES  |     | NULL    |       |
+| numberOfPages | int          | YES  |     | NULL    |       |
+| releasedate   | date         | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> notee
