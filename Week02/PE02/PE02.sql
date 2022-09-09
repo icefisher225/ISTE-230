@@ -1,6 +1,8 @@
 -- Ryan Cheevers-Brown
 -- PE02 for ISTE230
 
+tee /tmp/PE02.txt;
+
 DROP DATABASE IF EXISTS PE02;
 
 CREATE DATABASE PE02;
@@ -17,3 +19,5 @@ CREATE TABLE Book (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DESCRIBE Book;
+
+notee;
