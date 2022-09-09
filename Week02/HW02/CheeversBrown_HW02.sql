@@ -25,7 +25,7 @@ CREATE TABLE Item (
     descriptn VARCHAR(255), 
     returnable CHAR(1),
     perishable CHAR(1),
-    shelfQty INT UNSIGNED
+    shelfQty INT UNSIGNED,
     CONSTRAINT Item_pk PRIMARY KEY (itemID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
