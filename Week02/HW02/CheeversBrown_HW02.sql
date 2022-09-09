@@ -3,6 +3,12 @@
 
 tee /tmp/CheeversBrown_HW02.txt;
 
+DROP DATABASE IF EXISTS HW02;
+
+CREATE DATABASE HW02;
+
+USE HW02;
+
 -- Table: Item
 CREATE TABLE Item (
     itemID VARCHAR(25) UNIQUE,
@@ -20,7 +26,8 @@ CREATE TABLE Item (
     returnable CHAR(1),
     perishable CHAR(1),
     shelfQty INT UNSIGNED
-);
+    CONSTRAINT Item_pk PRIMARY KEY (itemID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DESCRIBE Item;
 
