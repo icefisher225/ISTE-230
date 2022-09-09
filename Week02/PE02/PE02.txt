@@ -1,0 +1,41 @@
+--------------
+DROP DATABASE IF EXISTS PE02
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+CREATE DATABASE PE02
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+Database changed
+--------------
+CREATE TABLE Book (
+    title           VARCHAR(50),
+    isbn13Number    CHAR(13)     UNIQUE,
+    author          VARCHAR(255),
+    numberOfPages   SMALLINT UNSIGNED,
+    releaseDate     DATE,
+    CONSTRAINT Book_pk PRIMARY KEY (isbn13Number)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+--------------
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+--------------
+DESCRIBE Book
+--------------
+
++---------------+-------------------+------+-----+---------+-------+
+| Field         | Type              | Null | Key | Default | Extra |
++---------------+-------------------+------+-----+---------+-------+
+| title         | varchar(50)       | YES  |     | NULL    |       |
+| isbn13Number  | char(13)          | NO   | PRI | NULL    |       |
+| author        | varchar(255)      | YES  |     | NULL    |       |
+| numberOfPages | smallint unsigned | YES  |     | NULL    |       |
+| releaseDate   | date              | YES  |     | NULL    |       |
++---------------+-------------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
