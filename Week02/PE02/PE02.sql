@@ -1,5 +1,5 @@
--- tables
--- Table: Books
+-- Ryan Cheevers-Brown
+-- PE02 for ISTE230
 
 DROP DATABASE IF EXISTS PE02;
 
