@@ -1,0 +1,21 @@
+mysql> source Week04/PE04/CheeversBrown_PE04.sql;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.01 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.00 sec)
+
++-----------+-----------+----------+
+| contactID | firstName | lastName |
++-----------+-----------+----------+
+|         1 | David     | Munson   |
+|         2 | UNKNOWN   | UNKNOWN  |
++-----------+-----------+----------+
+2 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> notee;
