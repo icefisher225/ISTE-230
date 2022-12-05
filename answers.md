@@ -6,7 +6,7 @@
 
 #### Results: 50 Tuples, 3 Attributes
 
-### Q3: In order for two SWQL queries to be union compatible, they must 
+### Q3: In order for two SQL queries to be union compatible, they must 
 
 #### Answer: both output compatible data types for each column, return the same number of columns, and the order of the columns match up
 
