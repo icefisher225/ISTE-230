@@ -1,0 +1,140 @@
+mysql> SOURCE D:\\Profiles\\rfc6058\\iste-230\\Final\\Practical\\CheeversBrown_Final_Practical.sql
+Database changed
+
+# Q1: Subquery for EMPLOYER[statecode] - QUARTER[location]
+--------------
+SELECT DISTINCT statecode AS "State Code"
+FROM EMPLOYER
+WHERE statecode NOT IN 
+    (SELECT location
+    FROM QUARTER)
+--------------
+
++------------+
+| State Code |
++------------+
+| AL         |
+| CO         |
+| CT         |
+| FL         |
+| GA         |
+| MI         |
+| NJ         |
+| NV         |
+| OH         |
+| PA         |
+| SC         |
+| TX         |
+| VA         |
++------------+
+13 rows in set (0.00 sec)
+
+# Q2: List employers where name[2,3] == "an" or "oc"
+
+--------------
+SELECT EMPLOYER.companyName AS "Company Name", interviewDate AS "Interview Date"
+FROM EMPLOYER LEFT JOIN INTERVIEW ON EMPLOYER.companyName = INTERVIEW.companyName
+WHERE SUBSTRING(EMPLOYER.companyName, 2, 2)
+IN ("an", "oc")
+--------------
+
++--------------------------------+----------------+
+| Company Name                   | Interview Date |
++--------------------------------+----------------+
+| Sandy Shore Software           | 2021-04-20     |
+| Nantucket Applications, Inc.   | 2021-03-24     |
+| Manhattan-Made Software        | 2021-01-31     |
+| Manhattan-Made Software        | 2021-02-01     |
+| Manhattan-Made Software        | 2021-01-31     |
+| Manhattan-Made Software        | 2021-02-01     |
+| Rochester Application Software | NULL           |
+| Rochester Software Design      | 2020-07-01     |
+| Yankee Software                | NULL           |
+| Yankee Software                | NULL           |
+| Yankee Software                | NULL           |
+| Focused Applications, Inc.     | 2020-07-01     |
++--------------------------------+----------------+
+12 rows in set (0.00 sec)
+
+# Q3: Average and max salary by company
+
+--------------
+SELECT EMPLOYER.companyName AS "Company Name", AVG(INTERVIEW.salaryOffered) AS "Average Salary", MAX(INTERVIEW.salaryOffered) AS "Max Salary" 
+FROM EMPLOYER, INTERVIEW
+WHERE INTERVIEW.companyName = EMPLOYER.companyName
+GROUP BY EMPLOYER.companyName
+--------------
+
++------------------------------+----------------+------------+
+| Company Name                 | Average Salary | Max Salary |
++------------------------------+----------------+------------+
+| Acme Information Source      |      22.250000 |      22.25 |
+| Braddock Information Assoc.  |      21.000000 |      21.00 |
+| Ajax Software, Inc.          |      21.500000 |      21.75 |
+| Bay Software Inc.            |      22.000000 |      22.00 |
+| Vegas Programming and Design |      21.250000 |      21.25 |
+| Mountainside Magic Software  |      21.375000 |      21.75 |
+| Cameron Industries           |      23.375000 |      23.50 |
+| CCC Software                 |      21.750000 |      21.75 |
+| DC Security Applications     |      21.750000 |      21.75 |
+| Davis-Klein Software         |      21.500000 |      21.50 |
+| Flordia Software Designs     |      22.500000 |      23.00 |
+| Rochester Software Design    |      22.250000 |      22.25 |
+| Focused Applications, Inc.   |      22.250000 |      22.25 |
+| Georgia Software Design      |      22.000000 |      22.00 |
+| ApplDesign                   |      21.750000 |      21.75 |
+| Long Island Apps, Inc.       |      22.500000 |      22.50 |
+| Jersey Computer Services     |      22.750000 |      22.75 |
+| Manhattan-Made Software      |      23.125000 |      23.50 |
+| Nantucket Applications, Inc. |      23.250000 |      23.25 |
+| PennState Programming, Inc.  |      23.250000 |      23.25 |
+| Sandy Shore Software         |      23.000000 |      23.00 |
+| Buffalo Software Assoc.      |      23.000000 |      23.00 |
+| Virginia Software Industries |      24.000000 |      24.00 |
++------------------------------+----------------+------------+
+23 rows in set (0.00 sec)
+
+# Q4: New TRAVEL table
+
+--------------
+DROP TABLE TRAVEL
+--------------
+
+Query OK, 0 rows affected (0.01 sec)
+
+--------------
+CREATE TABLE TRAVEL (
+    travelID INT UNSIGNED AUTO_INCREMENT,
+    interviewID INT UNSIGNED,
+    departDate DATE NOT NULL,
+    departLoc CHAR(3) NOT NULL,
+    destinationDate DATE NOT NULL,
+    destinationLoc CHAR(3) NOT NULL,
+    bookedThrough VARCHAR(50),
+    paid BOOLEAN NOT NULL,
+    FOREIGN KEY (interviewID) REFERENCES INTERVIEW(interviewID) ON UPDATE CASCADE ON DELETE CASCADE,
+    PRIMARY KEY (travelID)
+)
+--------------
+
+Query OK, 0 rows affected (0.02 sec)
+
+--------------
+DESCRIBE TRAVEL
+--------------
+
++-----------------+--------------+------+-----+---------+----------------+
+| Field           | Type         | Null | Key | Default | Extra          |
++-----------------+--------------+------+-----+---------+----------------+
+| travelID        | int unsigned | NO   | PRI | NULL    | auto_increment |
+| interviewID     | int unsigned | YES  | MUL | NULL    |                |
+| departDate      | date         | NO   |     | NULL    |                |
+| departLoc       | char(3)      | NO   |     | NULL    |                |
+| destinationDate | date         | NO   |     | NULL    |                |
+| destinationLoc  | char(3)      | NO   |     | NULL    |                |
+| bookedThrough   | varchar(50)  | YES  |     | NULL    |                |
+| paid            | tinyint(1)   | NO   |     | NULL    |                |
++-----------------+--------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
+
+mysql> notee
